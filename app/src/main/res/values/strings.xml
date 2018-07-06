@@ -1,0 +1,149 @@
+<resources>
+    <string name="app_name">Measure</string>
+    <string name="title1" >penis size</string>
+    <string name="title2" >calculator</string>
+
+    <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <array name="countries">
+        <item>Afghanistan|13.69</item>
+        <item>Albania|14.19</item>
+        <item>Algeria|14.49</item>
+        <item>Angola|15.73</item>
+        <item>Argentina|14.88</item>
+        <item>Armenia|13.12</item>
+        <item>Australia|15.70</item>
+        <item>Austria|14.69</item>
+        <item>Bahrein|12.93</item>
+        <item>Bangladesh|11.20</item>
+        <item>Belarus|13.98</item>
+        <item>Belgium|15.14</item>
+        <item>Belize|15.75</item>
+        <item>Bhutan|11.12</item>
+        <item>Bolivia|14.70</item>
+        <item>Bosnia and Herzegovina|15.27</item>
+        <item>Brazil|15.70</item>
+        <item>Bulgaria|14.66</item>
+        <item>Burkina Faso|15.19</item>
+        <item>Cambodia|9.84</item>
+        <item>Cameroon|16.65</item>
+        <item>Canada|13.92</item>
+        <item>Cape Verde|14.05</item>
+        <item>Central African Rep.|15.33</item>
+        <item>Chad|15.39</item>
+        <item>Chile|14.59</item>
+        <item>China|12.90</item>
+        <item>Colombia|16.75</item>
+        <item>Congo-Brazzaville|17.33</item>
+        <item>Costa Rica|13.81</item>
+        <item>Cote d'Ivoire|15.22</item>
+        <item>Croatia|14.77</item>
+        <item>Cuba|15.87</item>
+        <item>Cyprus|12.17</item>
+        <item>Czech Republic|14.17</item>
+        <item>Denmark|15.07</item>
+        <item>Dominican Republic|15.99</item>
+        <item>DR Congo|17.93</item>
+        <item>Ecuador|17.59</item>
+        <item>Egypt|13.85</item>
+        <item>El Salvador|12.71</item>
+        <item>Estonia|13.78</item>
+        <item>Ethiopia|13.53</item>
+        <item>Finland|13.59</item>
+        <item>France|14.50</item>
+        <item>Gambia|15.07</item>
+        <item>Georgia|13.87</item>
+        <item>Germany|14.48</item>
+        <item>Ghana|17.31</item>
+        <item>Greece|12.18</item>
+        <item>Greenland|13.87</item>
+        <item>Guatemala|13.24</item>
+        <item>Guyana|14.75</item>
+        <item>Haiti|15.67</item>
+        <item>Hawaii|13.21</item>
+        <item>Honduras|12.40</item>
+        <item>Hong Kong SAR, China|11.19</item>
+        <item>Hungary|14.68</item>
+        <item>Iceland|14.56</item>
+        <item>India|12.93</item>
+        <item>Indonesia|11.67</item>
+        <item>Iran|11.58</item>
+        <item>Iraq|11.35</item>
+        <item>Ireland|12.78</item>
+        <item>Israel|13.60</item>
+        <item>Italy|12.50</item>
+        <item>Jamaica|16.30</item>
+        <item>Japan|12.60</item>
+        <item>Jordan|13.50</item>
+        <item>Kazakhstan|13.46</item>
+        <item>Kenya|16.28</item>
+        <item>Kiribati|14.19</item>
+        <item>Korea, North|9.60</item>
+        <item>Korea, Rep.|10.80</item>
+        <item>Kuwait|11.38</item>
+        <item>Laos|10.14</item>
+        <item>Latvia|14.69</item>
+        <item>Lebanon|16.82</item>
+        <item>Libya|13.74</item>
+        <item>Lithuania|14.55</item>
+        <item>Luxembourg|13.82</item>
+        <item>Macedonia, FYR|13.98</item>
+        <item>Mexico|14.09</item>
+        <item>Moldova|13.76</item>
+        <item>Mongolia|12.77</item>
+        <item>Montenegro|13.56</item>
+        <item>Morocco|13.86</item>
+        <item>Myanmar|10.10</item>
+        <item>Nepal|9.98</item>
+        <item>Netherlands|15.60</item>
+        <item>New Caledonia|13.24</item>
+        <item>New Zealand|15.79</item>
+        <item>Norway|14.34</item>
+        <item>Oman|12.85</item>
+        <item>Pakistan|11.40</item>
+        <item>Palestine|15.08</item>
+        <item>Panama|15.49</item>
+        <item>Papua New Guinea|13.62</item>
+        <item>Paraguay|15.53</item>
+        <item>Peru|15.07</item>
+        <item>Philippines|10.85</item>
+        <item>Poland|15.41</item>
+        <item>Portugal|15.14</item>
+        <item>Qatar|12.41</item>
+        <item>Romania|12.73</item>
+        <item>Russian Federation|14.16</item>
+        <item>Samoa|12.87</item>
+        <item>Saudi Arabia|12.40</item>
+        <item>Scotland|14.30</item>
+        <item>Senegal|15.89</item>
+        <item>Serbia|14.78</item>
+        <item>Singapore|11.16</item>
+        <item>Syria|13.10</item>
+        <item>Slovak Republic|14.19</item>
+        <item>Slovenia|14.01</item>
+        <item>Solomon Islands|13.14</item>
+        <item>South Africa|15.29</item>
+        <item>Spain|13.58</item>
+        <item>Sri Lanka|10.18</item>
+        <item>Sudan|17.95</item>
+        <item>Suriname|13.34</item>
+        <item>Sweden|15.36</item>
+        <item>Switzerland|14.25</item>
+        <item>Taiwan|12.50</item>
+        <item>Tanzania|11.50</item>
+        <item>Thailand|9.43</item>
+        <item>Tonga|12.94</item>
+        <item>Tunisia|14.61</item>
+        <item>Turkey|13.70</item>
+        <item>Turkmenistan|13.48</item>
+        <item>United Arab Emirates|12.54</item>
+        <item>Ukraine|14.20</item>
+        <item>United Kingdom|14.30</item>
+        <item>United States|14.15</item>
+        <item>Uruguay|14.67</item>
+        <item>Uzbekistan|13.43</item>
+        <item>Venezuela, RB|16.93</item>
+        <item>Vietnam|10.15</item>
+        <item>Yemen, Rep.|12.70</item>
+    </array>
+
+</resources>

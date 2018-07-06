@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_start">20dp</dimen>
+
+    <dimen name="textSizeTitle">30sp</dimen>
+    <dimen name="textSizePrice">22sp</dimen>
+    <dimen name="textSizeDescription">15sp</dimen>
+
+</resources>
