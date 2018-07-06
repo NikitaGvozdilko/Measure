@@ -2,7 +2,8 @@
     <string name="app_name">Measure</string>
     <string name="title1" >penis size</string>
     <string name="title2" >calculator</string>
-
+    <string name="choose_country" >choose country</string>
+    <string name="resultat" >рассчитать</string>
     <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <array name="countries">
         <item>Afghanistan|13.69</item>
