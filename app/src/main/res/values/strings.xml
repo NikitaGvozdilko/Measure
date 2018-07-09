@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">Measure</string>
+    <string name="app_name">Is your pennis big?</string>
     <string name="title1" >penis size</string>
     <string name="title2" >calculator</string>
     <string name="choose_country" >choose country</string>
-    <string name="resultat" >рассчитать</string>
+    <string name="resultat" >result</string>
+    <string name="restart" >restart</string>
+    <string name="in_centimeter" >in centimeter</string>
     <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <array name="countries">
         <item>Afghanistan|13.69</item>
@@ -36,7 +38,7 @@
         <item>Colombia|16.75</item>
         <item>Congo-Brazzaville|17.33</item>
         <item>Costa Rica|13.81</item>
-        <item>Cote d'Ivoire|15.22</item>
+        <item>Cote d&#8217;Ivoire|15.22</item>
         <item>Croatia|14.77</item>
         <item>Cuba|15.87</item>
         <item>Cyprus|12.17</item>

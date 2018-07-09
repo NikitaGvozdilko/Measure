@@ -11,8 +11,10 @@
     <color name="colorLine">#ba9573</color>
     <color name="colorBackgroundButton">#ffe3cb</color>
     <color name="colorBorderButton">#e0b999</color>
-    <color name="colorRes">#599060</color>
-    <color name="colorResChecked">#ccf5d1</color>
+    <color name="colorRestart">#599060</color>
+    <color name="colorRestartChecked">#ccf5d1</color>
+    <color name="colorRes">#c1746f</color>
+    <color name="colorResChecked">#ffc9c6</color>
     <color name="colorImageButton">#f3d5d5</color>
     <color name="colorImageButtonChecked">#f2acac</color>
 </resources>
