@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#c1746f</color>
     <color name="colorBackground">#ffeddd</color>
 
     <color name="colorText">#c1746f</color>
@@ -12,4 +12,7 @@
     <color name="colorBackgroundButton">#ffe3cb</color>
     <color name="colorBorderButton">#e0b999</color>
     <color name="colorRes">#599060</color>
+    <color name="colorResChecked">#ccf5d1</color>
+    <color name="colorImageButton">#f3d5d5</color>
+    <color name="colorImageButtonChecked">#f2acac</color>
 </resources>

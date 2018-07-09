@@ -1,0 +1,15 @@
+<shape
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:thickness="5dp"
+    android:shape="rectangle">
+    <!--stroke android:width="1dp" android:color="?attr/colorPrimaryDark"/-->
+
+    <corners android:radius="5dp" />
+    <solid android:color="@color/colorImageButtonChecked"/>
+    <gradient
+        android:startColor="@color/colorImageButton"
+        android:endColor="@color/colorImageButtonChecked"
+        android:type="radial"
+        android:gradientRadius="50"/>
+</shape>
