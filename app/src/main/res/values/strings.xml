@@ -4,9 +4,11 @@
     <string name="title2" >calculator</string>
     <string name="choose_country" >choose country</string>
     <string name="resultat" >result</string>
+    <string name="calculate" >calculate</string>
     <string name="restart" >restart</string>
     <string name="in_centimeter" >in centimeter</string>
     <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_unit_id1">ca-app-pub-3940256099942544/6300978112</string>
     <array name="countries">
         <item>Afghanistan|13.69</item>
         <item>Albania|14.19</item>

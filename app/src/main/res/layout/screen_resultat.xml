@@ -56,65 +56,118 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/ivResultat"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/start_cicrcle"
-        android:clickable="true"
-        android:gravity="center"
-        android:scrollbarAlwaysDrawHorizontalTrack="true"
-        android:text="123"
-        android:scaleType="center"
-        android:textColor="@color/colorText"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline1"/>
+    <!--<ImageView-->
+        <!--android:id="@+id/ivResultat"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:src="@drawable/start_cicrcle"-->
+        <!--android:clickable="true"-->
+        <!--android:gravity="center"-->
+        <!--android:scrollbarAlwaysDrawHorizontalTrack="true"-->
+        <!--android:text="123"-->
+        <!--android:scaleType="center"-->
+        <!--android:textColor="@color/colorText"-->
+        <!--android:textSize="50sp"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/guideline2"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/guideline1"/>-->
 
     <TextView
         android:id="@+id/tvResultat"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
+        android:background="@drawable/start_cicrcle"
         android:clickable="true"
         android:gravity="center"
         android:scrollbarAlwaysDrawHorizontalTrack="true"
         android:text="123"
         android:textColor="@color/colorText"
-        android:textSize="50sp"
+        android:textSize="70sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline1" />
 
-   <Button
 
-    android:id="@+id/btnRes"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:background="@drawable/resultat_back"
-    android:text="@string/resultat"
-    android:layout_margin="20dp"
-       android:textAllCaps="true"
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        android:layout_alignParentLeft="true"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2"
+        >
+
+    <Button
+
+        android:id="@+id/btnRestart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:background="@drawable/restart_back"
+
+        android:textAllCaps="true"
+        android:textColor="@color/colorBackground"
+        android:drawableRight="@drawable/ic_shortcut_restart_icon"
+
+         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation = "2dp"
+        android:gravity="center"
+        android:text="@string/restart"
+        android:textStyle="bold"
+        android:textSize="@dimen/textSizeCentimeter"
+        android:fontFamily="@font/opensans_light"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBackground"
+ />
+    </FrameLayout>
+    <!--android:drawableRight="@drawable/restart_icon"-->
+    <!--<ImageView-->
+        <!--android:id="@+id/ivRestart"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_margin="20dp"-->
+        <!--android:drawableRight="@drawable/restart_icon"-->
+
+        <!--android:scaleType="fitCenter"-->
+        <!--android:src="@drawable/restart_icon"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/guideline2" />-->
+
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_unit_id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"></com.google.android.gms.ads.AdView>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"

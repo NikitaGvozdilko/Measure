@@ -1,5 +1,7 @@
 package kodman.isyourpenisbig;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -77,87 +79,87 @@ Button btnRes;
     double avLength = 0;
 
 
-    private void setCheked(ImageButton ibs, ImageButton ibs1, ImageButton ibs2) {
+//    private void setCheked(ImageButton ibs, ImageButton ibs1, ImageButton ibs2) {
+//
+//        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+//            //noinspection deprecation
+//            //ibPeopleBig.setBackgroundDrawable(getResources().getDrawable(R.color.colorImageButtonChecked));
+//            ibs.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked));
+//        } else {
+//            //ibPeopleBig.setBackground(getResources().getDrawable(R.color.colorImageButtonChecked));
+//            // ibPeopleBig.setBackground(getResources().getDrawable(R.drawable.checked));
+//            ibs.setBackground(ContextCompat.getDrawable(this, R.drawable.checked));
+//        }
+//        ibs.setTag(CHECKED);
+//
+//        if (ibs1.getTag() == null || ((short) ibs1.getTag()) == CHECKED) {
+//            ibs1.getTag(UNCHECKED);
+//            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+//                //noinspection deprecation
+//                ibs1.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
+//            } else {
+//                ibs1.setBackground(getResources().getDrawable(R.drawable.unchecked));
+//                //  Log.d("---","draw uncheck : "+ibs1);
+//            }
+//
+//        }
+//        if (ibs2.getTag() == null || ((short) ibs2.getTag()) == CHECKED) {
+//            ibs2.getTag(UNCHECKED);
+//            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+//                //noinspection deprecation
+//                ibs2.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
+//            } else {
+//                ibs2.setBackground(getResources().getDrawable(R.drawable.unchecked));
+//                //  Log.d("---","draw uncheck : "+ibs2);
+//            }
+//
+//        }
+//    }
 
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-            //noinspection deprecation
-            //ibPeopleBig.setBackgroundDrawable(getResources().getDrawable(R.color.colorImageButtonChecked));
-            ibs.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked));
-        } else {
-            //ibPeopleBig.setBackground(getResources().getDrawable(R.color.colorImageButtonChecked));
-            // ibPeopleBig.setBackground(getResources().getDrawable(R.drawable.checked));
-            ibs.setBackground(ContextCompat.getDrawable(this, R.drawable.checked));
-        }
-        ibs.setTag(CHECKED);
-
-        if (ibs1.getTag() == null || ((short) ibs1.getTag()) == CHECKED) {
-            ibs1.getTag(UNCHECKED);
-            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                //noinspection deprecation
-                ibs1.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
-            } else {
-                ibs1.setBackground(getResources().getDrawable(R.drawable.unchecked));
-                //  Log.d("---","draw uncheck : "+ibs1);
-            }
-
-        }
-        if (ibs2.getTag() == null || ((short) ibs2.getTag()) == CHECKED) {
-            ibs2.getTag(UNCHECKED);
-            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                //noinspection deprecation
-                ibs2.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
-            } else {
-                ibs2.setBackground(getResources().getDrawable(R.drawable.unchecked));
-                //  Log.d("---","draw uncheck : "+ibs2);
-            }
-
-        }
-    }
-
-    public class SpinnerAdapter extends ArrayAdapter<String> {
-        private Context mContext;
-        private String[] list;
-
-        public SpinnerAdapter(Context c, int textViewResourceId, String[] list) {
-            super(c, textViewResourceId, list);
-            mContext = c;
-            this.list = list;
-        }
-
-        public int getCount() {
-            return list.length;
-        }
-
-
-        @Override
-        public View getDropDownView(int position, View convertView,
-                                    ViewGroup parent) {
-            LayoutInflater inflater = getLayoutInflater();
-            View row = inflater.inflate(R.layout.spin_dropdown, parent, false);
-            TextView label = (TextView) row.findViewById(R.id.tv);
-            setText(position, label);
-            return row;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            LayoutInflater inflater = getLayoutInflater();
-            View row = inflater.inflate(R.layout.spin, parent, false);
-
-            TextView label = (TextView) row.findViewById(R.id.tv);
-            setText(position, label);
-            return row;
-        }
-
-        public void setText(int position, TextView label) {
-
-            String[] ss = list[position].split("[|]");
-            //Log.d("---", "[] country = "+ss[0]+"   "  +ss[1]);
-            avLength = Double.valueOf(ss[1]);
-            // Log.d("---", " country = "+country+"   "  +avLength);
-            label.setText(ss[0]);
-        }
-    }
+//    public class SpinnerAdapter extends ArrayAdapter<String> {
+//        private Context mContext;
+//        private String[] list;
+//
+//        public SpinnerAdapter(Context c, int textViewResourceId, String[] list) {
+//            super(c, textViewResourceId, list);
+//            mContext = c;
+//            this.list = list;
+//        }
+//
+//        public int getCount() {
+//            return list.length;
+//        }
+//
+//
+//        @Override
+//        public View getDropDownView(int position, View convertView,
+//                                    ViewGroup parent) {
+//            LayoutInflater inflater = getLayoutInflater();
+//            View row = inflater.inflate(R.layout.spin_dropdown, parent, false);
+//            TextView label = (TextView) row.findViewById(R.id.tv);
+//            setText(position, label);
+//            return row;
+//        }
+//
+//        @Override
+//        public View getView(int position, View convertView, ViewGroup parent) {
+//            LayoutInflater inflater = getLayoutInflater();
+//            View row = inflater.inflate(R.layout.spin, parent, false);
+//
+//            TextView label = (TextView) row.findViewById(R.id.tv);
+//            setText(position, label);
+//            return row;
+//        }
+//
+//        public void setText(int position, TextView label) {
+//
+//            String[] ss = list[position].split("[|]");
+//            //Log.d("---", "[] country = "+ss[0]+"   "  +ss[1]);
+//            avLength = Double.valueOf(ss[1]);
+//            // Log.d("---", " country = "+country+"   "  +avLength);
+//            label.setText(ss[0]);
+//        }
+//    }
 
 
     @Override
@@ -167,8 +169,7 @@ Button btnRes;
         initScreenStart();
 
         //Реклама
-        MobileAds.initialize(this,
-                "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(this,getResources().getString(R.string.ad_unit_id));
 
         com.google.android.gms.ads.AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -179,123 +180,53 @@ Button btnRes;
     private void initScreenStart() {
         status=START;
         setContentView(R.layout.activity_main);
+       // setContentView(R.layout.screen_resultat);
         ivStart = this.findViewById(R.id.imageView);
         ivStart.setOnClickListener(this);
 
 
     }
 
-    private void initScreenRes() {
-        status=RESULTAT;
-        setContentView(R.layout.screen_resultat);
 
-        TextView tvResultat=this.findViewById(R.id.tvResultat);
-        tvResultat.setWidth(tvResultat.getHeight());
-        Log.d("---","Scen REUSLTAT");
-     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("---","Resume");
 
-    private void initScreenConditions() {
-        status=CONDITIONS;
-        setContentView(R.layout.screen_conditions);
-        spinner = this.findViewById(R.id.spinner);
-        String[] countries = getResources().getStringArray(R.array.countries);
-        SpinnerAdapter adapter = new SpinnerAdapter(this, R.id.tv, countries);
-        adapter.setDropDownViewResource(R.layout.spin_dropdown);
-
-        spinner.setAdapter(adapter);
-
-
-        ibPeopleBig=this.findViewById(R.id.ibPeopleBig);
-        ibPeopleMiddle=this.findViewById(R.id.ibPeopleMiddle);
-        ibPeopleSmall=this.findViewById(R.id.ibPeopleSmall);
-
-        ibNoseBig=this.findViewById(R.id.ibNoseBig);
-        ibNoseMiddle=this.findViewById(R.id.ibNoseMiddle);
-        ibNoseSmall=this.findViewById(R.id.ibNoseSmall);
-
-        ibFootBig=this.findViewById(R.id.ibFootBig);
-        ibFootMiddle=this.findViewById(R.id.ibFootMiddle);
-        ibFootSmall=this.findViewById(R.id.ibFootSmall);
-
-        ibHandBig=this.findViewById(R.id.ibHandBig);
-        ibHandMiddle=this.findViewById(R.id.ibHandMiddle);
-        ibHandSmall=this.findViewById(R.id.ibHandSmall);
-
-        btnRes=this.findViewById(R.id.btnRes);
-        setClickListener();
     }
 
-    private void setClickListener() {
-        ibPeopleBig.setOnClickListener(this);
-        ibPeopleMiddle.setOnClickListener(this);
-        ibPeopleSmall.setOnClickListener(this);
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if(null!=ivStart&&!ivStart.isClickable())
+            ivStart.setClickable(true);
+    }
 
-        ibNoseBig.setOnClickListener(this);
-        ibNoseMiddle.setOnClickListener(this);
-        ibNoseSmall.setOnClickListener(this);
+    private void initScreenConditions() {
 
-        ibFootBig.setOnClickListener(this);
-        ibFootMiddle.setOnClickListener(this);
-        ibFootSmall.setOnClickListener(this);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        ibHandBig.setOnClickListener(this);
-        ibHandMiddle.setOnClickListener(this);
-        ibHandSmall.setOnClickListener(this);
+        FragmentConditions fConditions = new FragmentConditions();
+        // fTrans = getFragmentManager().beginTransaction();
 
-        btnRes.setOnClickListener(this);
+        fragmentTransaction.add(R.id.fragLayout, fConditions);
+        fragmentTransaction.addToBackStack(null);
+        int n = fragmentTransaction.commit();
+
+        status = CONDITIONS;
+        ivStart.setClickable(false);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
 
-            case R.id.btnRes:
-                initScreenRes();
-                break;
+
             case R.id.imageView:
                 initScreenConditions();
                 break;
-            case R.id.ibFootBig:
-                setCheked(ibFootBig, ibFootMiddle, ibFootSmall);
-                break;
-            case R.id.ibFootMiddle:
-                setCheked(ibFootMiddle, ibFootBig, ibFootSmall);
-                break;
-            case R.id.ibFootSmall:
-                setCheked(ibFootSmall, ibFootBig, ibFootMiddle);
-                break;
 
-            case R.id.ibNoseBig:
-                setCheked(ibNoseBig, ibNoseMiddle, ibNoseSmall);
-                break;
-            case R.id.ibNoseMiddle:
-                setCheked(ibNoseMiddle, ibNoseBig, ibNoseSmall);
-                break;
-            case R.id.ibNoseSmall:
-                setCheked(ibNoseSmall, ibNoseMiddle, ibNoseBig);
-                break;
-
-            case R.id.ibPeopleBig:
-
-                setCheked(ibPeopleBig, ibPeopleMiddle, ibPeopleSmall);
-                break;
-            case R.id.ibPeopleMiddle:
-
-                setCheked(ibPeopleMiddle, ibPeopleBig, ibPeopleSmall);
-                break;
-            case R.id.ibPeopleSmall:
-                setCheked(ibPeopleSmall, ibPeopleMiddle, ibPeopleBig);
-                break;
-
-            case R.id.ibHandBig:
-                setCheked(ibHandBig, ibHandMiddle, ibHandSmall);
-                break;
-            case R.id.ibHandMiddle:
-                setCheked(ibHandMiddle, ibHandBig, ibHandSmall);
-                break;
-            case R.id.ibHandSmall:
-                setCheked(ibHandSmall, ibHandBig, ibHandMiddle);
-                break;
         }
     }
 }
