@@ -3,30 +3,30 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clConditions"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    >
+    android:paddingRight="20dp">
 
     <EditText
         android:id="@+id/etPeople"
         android:layout_width="@dimen/image_size"
         android:layout_height="@dimen/image_size"
         android:background="@drawable/edit_text_people"
-        android:inputType="number"
-        android:maxLength="3"
+
+        android:gravity="center"
         android:hint="123"
+        android:inputType="number"
+        android:textAllCaps="true"
         android:textColor="@color/colorText"
         android:textSize="30sp"
-        android:textAllCaps="true"
-        android:cursorVisible="false"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/glPeople"
         app:layout_constraintLeft_toRightOf="@+id/glSmall"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/vLinePeople"
         android:layout_width="match_parent"
@@ -40,11 +40,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/glPeople" />
+
     <View
-        android:layout_gravity="center"
         android:id="@+id/vLineNose"
         android:layout_width="match_parent"
         android:layout_height="3dp"
+        android:layout_gravity="center"
         android:background="@color/colorLine"
         android:text="@string/title2"
         android:textColor="@color/colorText"
@@ -52,13 +53,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/glNose"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/glNose"
-        />
+        app:layout_constraintTop_toTopOf="@+id/glNose" />
+
     <View
-        android:layout_gravity="center"
         android:id="@+id/vLineFoot"
         android:layout_width="match_parent"
         android:layout_height="3dp"
+        android:layout_gravity="center"
         android:background="@color/colorLine"
         android:text="@string/title2"
         android:textColor="@color/colorText"
@@ -66,13 +67,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/glFoot"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/glFoot"
-        />
+        app:layout_constraintTop_toTopOf="@+id/glFoot" />
+
     <View
-        android:layout_gravity="center"
         android:id="@+id/vLineHand"
         android:layout_width="match_parent"
         android:layout_height="3dp"
+        android:layout_gravity="center"
         android:background="@color/colorLine"
         android:text="@string/title2"
         android:textColor="@color/colorText"
@@ -80,8 +81,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/glHand"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/glHand"
-        />
+        app:layout_constraintTop_toTopOf="@+id/glHand" />
 
     <Button
         android:id="@+id/btnRes"
@@ -100,11 +100,11 @@
 
         android:id="@+id/spinner"
 
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
-
-
         android:layout_height="0dp"
+
+
+        android:layout_margin="20dp"
         android:background="@drawable/spinner"
         android:gravity="fill_vertical|fill_horizontal|center"
         android:textSize="18sp"
@@ -117,8 +117,8 @@
         android:id="@+id/ibPeopleBig"
         android:layout_width="@dimen/image_size"
         android:layout_height="@dimen/image_size"
-        android:padding="3dp"
         android:background="@drawable/unchecked"
+        android:padding="3dp"
         android:scaleType="fitCenter"
         android:src="@drawable/people_icon"
         app:layout_constraintBottom_toTopOf="@+id/glPeople"
@@ -127,31 +127,30 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:padding="10dp"
-        android:src="@drawable/people_icon"
         android:id="@+id/ibPeopleMiddle"
         android:layout_width="@dimen/image_size"
         android:layout_height="@dimen/image_size"
         android:background="@drawable/unchecked"
+        android:padding="10dp"
         android:scaleType="fitCenter"
+        android:src="@drawable/people_icon"
         app:layout_constraintBottom_toTopOf="@+id/glPeople"
         app:layout_constraintLeft_toRightOf="@+id/glBig"
         app:layout_constraintRight_toLeftOf="@+id/glMiddle"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:padding="15dp"
-        android:src="@drawable/people_icon"
         android:id="@+id/ibPeopleSmall"
         android:layout_width="@dimen/image_size"
         android:layout_height="@dimen/image_size"
-        android:scaleType="fitCenter"
         android:background="@drawable/unchecked"
+        android:padding="15dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/people_icon"
         app:layout_constraintBottom_toTopOf="@+id/glPeople"
         app:layout_constraintLeft_toRightOf="@+id/glMiddle"
         app:layout_constraintRight_toLeftOf="@+id/glSmall"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <ImageButton
@@ -314,17 +313,19 @@
         app:layout_constraintGuide_percent="0.33333333333" />
 
     <android.support.constraint.Guideline
-    android:id="@+id/glFoot"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+        android:id="@+id/glFoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-    app:layout_constraintGuide_percent="0.4933333" />
+        app:layout_constraintGuide_percent="0.4933333" />
+
     <android.support.constraint.Guideline
         android:id="@+id/glHand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65999999" />
+
     <android.support.constraint.Guideline
         android:id="@+id/glRes"
         android:layout_width="wrap_content"

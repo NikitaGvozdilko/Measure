@@ -4,20 +4,66 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class FragmentConditions extends Fragment implements View.OnClickListener {
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
+public class FragmentConditions extends Fragment implements View.OnClickListener,View.OnKeyListener {
+    @Override
+    public boolean onKey(View view, int i, KeyEvent keyEvent) {
+       // Log.d("---"," "+i+" | "+KeyEvent.keyCodeToString(i));
+        if(i==KeyEvent.KEYCODE_ENTER)
+        {
+         //   Log.d("---","ENTER  "+i+" | "+KeyEvent.keyCodeToString(i));
+            //btnRes.setFocusable(true);
+            InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+            avLength=Double.parseDouble(etPeople.getText().toString());
+        }
+
+        return false;
+    }
+
     Spinner spinner;
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+Log.d("---","onActivtiyuResult");
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("---","onResume");
+        if(flag)
+        {
+            flag=false;
+            initScreenRes();
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 
     private void initScreenRes() {
 
@@ -29,20 +75,30 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
-//        status=RESULTAT;
-//        setContentView(R.layout.screen_resultat);
-//
-//        TextView tvResultat=this.findViewById(R.id.tvResultat);
-//        tvResultat.setWidth(tvResultat.getHeight());
-       // Log.d("---","Scen REUSLTAT");
     }
 
+
+    private void showAd(){
+
+        Log.d("---", "Show AD");
+        if (mInterstitialAd.isLoaded()) {
+
+            mInterstitialAd.show();
+        } else {
+            Log.d("---", "The interstitial wasn't loaded yet.");
+        }
+    }
     @Override
     public void onClick(View view) {
+
+        Log.d("---","Click"+view);
+
         switch (view.getId()) {
 
             case R.id.btnRes:
-                initScreenRes();
+
+                showAd();
+                //initScreenRes();
                 break;
 
 
@@ -90,46 +146,12 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
         }
     }
 
-    private void setCheked(ImageButton ibs, ImageButton ibs1, ImageButton ibs2) {
 
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-            //noinspection deprecation
-            //ibPeopleBig.setBackgroundDrawable(getResources().getDrawable(R.color.colorImageButtonChecked));
-            ibs.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked));
-        } else {
-            //ibPeopleBig.setBackground(getResources().getDrawable(R.color.colorImageButtonChecked));
-            // ibPeopleBig.setBackground(getResources().getDrawable(R.drawable.checked));
-            ibs.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.checked));
-        }
-        ibs.setTag(CHECKED);
-
-        if (ibs1.getTag() == null || ((short) ibs1.getTag()) == CHECKED) {
-            ibs1.getTag(UNCHECKED);
-            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                //noinspection deprecation
-                ibs1.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
-            } else {
-                ibs1.setBackground(getResources().getDrawable(R.drawable.unchecked));
-                //  Log.d("---","draw uncheck : "+ibs1);
-            }
-
-        }
-        if (ibs2.getTag() == null || ((short) ibs2.getTag()) == CHECKED) {
-            ibs2.getTag(UNCHECKED);
-            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                //noinspection deprecation
-                ibs2.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
-            } else {
-                ibs2.setBackground(getResources().getDrawable(R.drawable.unchecked));
-                //  Log.d("---","draw uncheck : "+ibs2);
-            }
-
-        }
-    }
 
     final short CHECKED = 1;
     final short UNCHECKED = 0;
 
+    EditText etPeople;
     // @BindView(R.id.ibPeopleBig)
     ImageButton ibPeopleBig;
     // @BindView(R.id.ibPeopleMiddle)
@@ -159,6 +181,9 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
     ImageButton ibHandSmall;
     Button btnRes;
     double avLength = 0;
+
+//For ADMOB
+    InterstitialAd mInterstitialAd;
 
     public class SpinnerAdapter extends ArrayAdapter<String> {
         private Context mContext;
@@ -219,7 +244,8 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
                              Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.screen_conditions, null);
-
+etPeople=view.findViewById(R.id.etPeople);
+etPeople.setOnKeyListener(this);
                 spinner = view.findViewById(R.id.spinner);
         String[] countries = getResources().getStringArray(R.array.countries);
         SpinnerAdapter adapter = new SpinnerAdapter( getActivity(), R.id.tv, countries);
@@ -246,9 +272,51 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
 
         btnRes=view.findViewById(R.id.btnRes);
         setClickListener();
+
+//AdMob
+
+       mInterstitialAd = new InterstitialAd(getActivity());
+        mInterstitialAd.setAdUnitId(getActivity().getResources().getString(R.string.ad_unit_id_interstitial));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+               // Log.d("---","Loaded");
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+               // Toast.makeText(getActivity().getBaseContext(),"  Failed AD:"+errorCode,Toast.LENGTH_SHORT).show();
+                // Code to be executed when an ad request fails.
+            }
+
+            @Override
+            public void onAdOpened() {
+                //Toast.makeText(getActivity().getBaseContext(),"  Opened AD",Toast.LENGTH_SHORT).show();
+                // Code to be executed when the ad is displayed.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+              //  Toast.makeText(getActivity().getBaseContext(),"  LeftApp AD",Toast.LENGTH_SHORT).show();
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                flag=true;
+                //mInterstitialAd.loadAd(new AdRequest.Builder().build());
+              //  initScreenRes();
+               // Toast.makeText(getActivity().getBaseContext(),"  Closed AD",Toast.LENGTH_SHORT).show();
+                // Code to be executed when when the interstitial ad is closed.
+            }
+
+        });
         return view;
     }
 
+    boolean flag=false;
     private void setClickListener() {
         ibPeopleBig.setOnClickListener(this);
         ibPeopleMiddle.setOnClickListener(this);
@@ -267,5 +335,43 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
         ibHandSmall.setOnClickListener(this);
 
         btnRes.setOnClickListener(this);
+    }
+
+
+    private void setCheked(ImageButton ibs, ImageButton ibs1, ImageButton ibs2) {
+
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            //noinspection deprecation
+            //ibPeopleBig.setBackgroundDrawable(getResources().getDrawable(R.color.colorImageButtonChecked));
+            ibs.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked));
+        } else {
+            //ibPeopleBig.setBackground(getResources().getDrawable(R.color.colorImageButtonChecked));
+            // ibPeopleBig.setBackground(getResources().getDrawable(R.drawable.checked));
+            ibs.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.checked));
+        }
+        ibs.setTag(CHECKED);
+
+        if (ibs1.getTag() == null || ((short) ibs1.getTag()) == CHECKED) {
+            ibs1.getTag(UNCHECKED);
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                //noinspection deprecation
+                ibs1.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
+            } else {
+                ibs1.setBackground(getResources().getDrawable(R.drawable.unchecked));
+                //  Log.d("---","draw uncheck : "+ibs1);
+            }
+
+        }
+        if (ibs2.getTag() == null || ((short) ibs2.getTag()) == CHECKED) {
+            ibs2.getTag(UNCHECKED);
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                //noinspection deprecation
+                ibs2.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
+            } else {
+                ibs2.setBackground(getResources().getDrawable(R.drawable.unchecked));
+                //  Log.d("---","draw uncheck : "+ibs2);
+            }
+
+        }
     }
 }

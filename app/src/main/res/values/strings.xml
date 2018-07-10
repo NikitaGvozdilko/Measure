@@ -8,6 +8,7 @@
     <string name="restart" >restart</string>
     <string name="in_centimeter" >in centimeter</string>
     <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_unit_id_interstitial">ca-app-pub-3940256099942544/1033173712</string>
     <string name="ad_unit_id1">ca-app-pub-3940256099942544/6300978112</string>
     <array name="countries">
         <item>Afghanistan|13.69</item>
