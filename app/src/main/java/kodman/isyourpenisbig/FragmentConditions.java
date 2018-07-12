@@ -44,14 +44,20 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
     private float measure(){
         Log.d("---","et Stature= "+etPeople.getText().toString());
         if(etPeople.getText()!=null&&!etPeople.getText().toString().equals(""))
+        {
             avStature=Float.parseFloat(etPeople.getText().toString());
+            kStature=8;
+        }
         else
             avStature=164;
+        float   resStature=avStature*(kStature/100);
+        Log.d("---"," Res Stature = "+resStature);
+
+
         Log.d("---","avLength = "+avLength);
         float   resFoot=(avStature*(kFoot/100)+5)/2;
         Log.d("---"," Res Foot = "+resFoot);
-        float   resStature=avStature*(kStature/100);
-        Log.d("---"," Res Stature = "+resStature);
+
         float   resHand=avLength*(kHand/100);
         Log.d("---"," Res Hand = "+resHand);
         float   resNose=avLength*(kNose/100);
@@ -80,6 +86,9 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
             imm.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
             try {
                 avLength = Float.parseFloat(etPeople.getText().toString());
+                setUncheckedImageButton(ibPeopleBig);
+                setUncheckedImageButton(ibPeopleMiddle);
+                setUncheckedImageButton(ibPeopleSmall);
             } catch (NumberFormatException e) {
                 avLength=164;
             }
@@ -124,9 +133,9 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
         //checks=state.getShortArray("ib");
 
         for (int i = 0; i < checks.length; i++) {
-            Log.d("---","restore : i="+i+" | "+checks[i]);
+           // Log.d("---","restore : i="+i+" | "+checks[i]);
             if (checks[i] == 1) {
-                Log.d("---", "setCheck i=" + i);
+             //   Log.d("---", "setCheck i=" + i);
                 setCheck(i + 1);
             }
         }
@@ -469,36 +478,53 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
             @Override
             public void onAdLoaded() {
                 // Code to be executed when an ad finishes loading.
-                // Log.d("---","Loaded");
+                 Log.d("---","Loaded");
             }
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 // Toast.makeText(getActivity().getBaseContext(),"  Failed AD:"+errorCode,Toast.LENGTH_SHORT).show();
                 // Code to be executed when an ad request fails.
+                Log.d("---","FailedToLoad :"+errorCode);
             }
 
             @Override
             public void onAdOpened() {
                 //Toast.makeText(getActivity().getBaseContext(),"  Opened AD",Toast.LENGTH_SHORT).show();
                 // Code to be executed when the ad is displayed.
+                Log.d("---","Opened");
+                flag = true;
             }
 
             @Override
             public void onAdLeftApplication() {
                 //  Toast.makeText(getActivity().getBaseContext(),"  LeftApp AD",Toast.LENGTH_SHORT).show();
                 // Code to be executed when the user has left the app.
+                Log.d("---","AdLeftApplication");
             }
 
             @Override
             public void onAdClosed() {
-                flag = true;
+               // flag = true;
+                Log.d("---","Closed");
                 //mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                //  initScreenRes();
+                // initScreenRes();
                 // Toast.makeText(getActivity().getBaseContext(),"  Closed AD",Toast.LENGTH_SHORT).show();
                 // Code to be executed when when the interstitial ad is closed.
             }
 
+            @Override
+            public void onAdClicked() {
+                Log.d("---","AdClickded");
+             //   flag = true;
+                super.onAdClicked();
+            }
+
+            @Override
+            public void onAdImpression() {
+                Log.d("---","Impression");
+                super.onAdImpression();
+            }
         });
         return view;
     }
@@ -538,51 +564,50 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
                 if(!b)
                 {
                     InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 }
             }
         });
     }
 
 
-    private void setCheked(ImageButton ibs, ImageButton ibs1, ImageButton ibs2) {
-
-
-
+    private void setCheckedImageButton(ImageButton ib)
+    {
+        Log.d("---","setChecked "+ib);
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
             //noinspection deprecation
             //ibPeopleBig.setBackgroundDrawable(getResources().getDrawable(R.color.colorImageButtonChecked));
-            if (ibs != null)
-                ibs.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked));
+            if (ib != null)
+                ib.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked));
         } else {
             //ibPeopleBig.setBackground(getResources().getDrawable(R.color.colorImageButtonChecked));
             // ibPeopleBig.setBackground(getResources().getDrawable(R.drawable.checked));
-            if (ibs != null)
-                ibs.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.checked));
+            if (ib != null)
+                ib.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.checked));
         }
-        ibs.setTag(CHECKED);
+        ib.setTag(CHECKED);
+    }
 
-        if (ibs1 != null && (ibs1.getTag() == null || ((short) ibs1.getTag()) == CHECKED)) {
-            ibs1.getTag(UNCHECKED);
-            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                //noinspection deprecation
-                ibs1.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
-            } else {
-                ibs1.setBackground(getResources().getDrawable(R.drawable.unchecked));
-                //  Log.d("---","draw uncheck : "+ibs1);
-            }
-
+    private void setUncheckedImageButton(ImageButton ib){
+        Log.d("---","setUnChecked "+ib);
+        ib.getTag(UNCHECKED);
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            //noinspection deprecation
+            ib.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
+        } else {
+            ib.setBackground(getResources().getDrawable(R.drawable.unchecked));
+            //  Log.d("---","draw uncheck : "+ibs1);
         }
-        if (ibs2 != null && (ibs2.getTag() == null || ((short) ibs2.getTag()) == CHECKED)) {
-            ibs2.getTag(UNCHECKED);
-            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                //noinspection deprecation
-                ibs2.setBackgroundDrawable(getResources().getDrawable(R.drawable.unchecked));
-            } else {
-                ibs2.setBackground(getResources().getDrawable(R.drawable.unchecked));
-                //  Log.d("---","draw uncheck : "+ibs2);
-            }
+    }
 
-        }
+
+    private void setCheked(ImageButton ibs, ImageButton ibs1, ImageButton ibs2) {
+
+        setCheckedImageButton(ibs);
+        if (ibs1 != null)
+            setUncheckedImageButton(ibs1);
+        if (ibs2 != null)
+            setUncheckedImageButton(ibs2);
+
     }
 }

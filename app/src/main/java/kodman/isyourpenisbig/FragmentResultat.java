@@ -3,6 +3,7 @@ package kodman.isyourpenisbig;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ScaleDrawable;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
@@ -22,9 +24,9 @@ public class FragmentResultat extends Fragment {
 
     public void setResultat(Float resultat)
     {
-        this.resultat=resultat;
+        this.resultatValue=resultat;
     }
-    double resultat=123;
+    double resultatValue=123;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,7 +52,8 @@ public class FragmentResultat extends Fragment {
 
 
         TextView tvResultat= view.findViewById(R.id.tvResultat);
-        tvResultat.setText(new DecimalFormat("#0.00").format(resultat));
+        final String resultat=new DecimalFormat("#0.00").format(resultatValue);
+        tvResultat.setText(resultat);
 Button btnRestart= view.findViewById(R.id.btnRestart);
 
         btnRestart.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +63,19 @@ Button btnRestart= view.findViewById(R.id.btnRestart);
             }
         });
 
+
+        ImageButton ibShare=view.findViewById(R.id.ibShare);
+        ibShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "Penis = "+resultat+" cm";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            }
+        });
         return view;
     }
 }

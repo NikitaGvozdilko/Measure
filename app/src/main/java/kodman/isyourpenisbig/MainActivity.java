@@ -128,11 +128,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(null!=ivStart&&!ivStart.isClickable())
             ivStart.setClickable(true);
 
-        if(this.findViewById(R.id.etPeople)!=null&&this.findViewById(R.id.etPeople).isFocusable())
-        {
-            this.findViewById(R.id.etPeople).setFocusable(false);
-            Log.d("---","onBackPress  focus ");
-        }
+//        if(this.findViewById(R.id.etPeople)!=null&&this.findViewById(R.id.etPeople).isFocusable())
+//        {
+//            this.findViewById(R.id.etPeople).setFocusable(false);
+//            Log.d("---","onBackPress  focus ");
+//        }
     }
 
     private void initScreenConditions() {
