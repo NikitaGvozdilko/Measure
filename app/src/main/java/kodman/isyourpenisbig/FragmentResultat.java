@@ -16,9 +16,11 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 
+import java.text.DecimalFormat;
+
 public class FragmentResultat extends Fragment {
 
-    public void setResultat(Double resultat)
+    public void setResultat(Float resultat)
     {
         this.resultat=resultat;
     }
@@ -27,7 +29,7 @@ public class FragmentResultat extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.screen_resultat, null);
-        MobileAds.initialize(getActivity(),getResources().getString(R.string.ad_unit_id));
+        MobileAds.initialize(getActivity(),getResources().getString(R.string.ad_unit_id_initialize));
 
         com.google.android.gms.ads.AdView mAdView = view.findViewById(R.id.adView);
 
@@ -48,7 +50,7 @@ public class FragmentResultat extends Fragment {
 
 
         TextView tvResultat= view.findViewById(R.id.tvResultat);
-        tvResultat.setText(""+resultat);
+        tvResultat.setText(new DecimalFormat("#0.00").format(resultat));
 Button btnRestart= view.findViewById(R.id.btnRestart);
 
         btnRestart.setOnClickListener(new View.OnClickListener() {

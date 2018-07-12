@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Is your pennis big?</string>
+    <string name="app_name">Is your penis big?</string>
     <string name="title1" >penis size</string>
     <string name="title2" >calculator</string>
     <string name="choose_country" >choose country</string>
@@ -7,9 +7,12 @@
     <string name="calculate" >calculate</string>
     <string name="restart" >restart</string>
     <string name="in_centimeter" >in centimeter</string>
-    <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="ad_unit_id_interstitial">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="ad_unit_id1">ca-app-pub-3940256099942544/6300978112</string>
+    <string name="hint_stature" >cm</string>
+    <!--<string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--<string name="ad_unit_id_interstitial">ca-app-pub-3940256099942544/1033173712</string>-->
+    <string name="ad_unit_id">ca-app-pub-8644762955474796/1232088178</string>
+    <string name="ad_unit_id_interstitial">ca-app-pub-8644762955474796/7538067100</string>
+    <string name="ad_unit_id_initialize">ca-app-pub-8644762955474796~3713947131</string>-->
     <array name="countries">
         <item>Afghanistan|13.69</item>
         <item>Albania|14.19</item>

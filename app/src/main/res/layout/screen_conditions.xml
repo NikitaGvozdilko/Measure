@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<android.support.constraint.ConstraintLayout
     android:id="@+id/clConditions"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,11 +22,12 @@
         android:background="@drawable/edit_text_people"
 
         android:gravity="center"
-        android:hint="123"
+        android:hint="@string/hint_stature"
         android:inputType="number"
         android:textAllCaps="true"
         android:textColor="@color/colorText"
         android:textSize="30sp"
+        android:maxLength="3"
         app:layout_constraintBottom_toTopOf="@+id/glPeople"
         app:layout_constraintLeft_toRightOf="@+id/glSmall"
         app:layout_constraintRight_toRightOf="parent"
@@ -335,3 +341,4 @@
 
 
 </android.support.constraint.ConstraintLayout>
+</LinearLayout>
