@@ -52,8 +52,10 @@ public class FragmentResultat extends Fragment {
 
 
         TextView tvResultat= view.findViewById(R.id.tvResultat);
-        final String resultat=new DecimalFormat("#0.00").format(resultatValue);
+        TextView tvInches = view.findViewById(R.id.tvInches);
+        final String resultat=new DecimalFormat("#0.00").format(resultatValue) + " cm";
         tvResultat.setText(resultat);
+        tvInches.setText(new DecimalFormat("#0.00").format(resultatValue / 2.54f) + " inches");
 Button btnRestart= view.findViewById(R.id.btnRestart);
 
         btnRestart.setOnClickListener(new View.OnClickListener() {

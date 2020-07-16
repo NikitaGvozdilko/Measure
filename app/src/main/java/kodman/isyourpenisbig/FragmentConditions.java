@@ -101,7 +101,7 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
         spinner.setAdapter(adapter);
 
         String[] arraySpinner = new String[]{
-                "cm", "dm"
+                "cm", "inches"
         };
         ArrayAdapter<String> measureAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_spinner_item, arraySpinner);
@@ -111,7 +111,7 @@ public class FragmentConditions extends Fragment implements View.OnClickListener
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) etPeople.setHint("cm");
-                else etPeople.setHint("dm");
+                else etPeople.setHint("inch");
             }
 
             @Override

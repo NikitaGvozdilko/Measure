@@ -24,22 +24,21 @@
         android:gravity="center"
         android:hint="@string/hint_stature"
         android:inputType="number"
+        android:maxLength="3"
         android:textAllCaps="true"
         android:textColor="@color/colorText"
         android:textSize="30sp"
-        android:maxLength="3"
-        app:layout_constraintBottom_toTopOf="@+id/glPeople"
+        app:layout_constraintBottom_toBottomOf="@+id/ibPeopleBig"
         app:layout_constraintLeft_toRightOf="@+id/glSmall"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerMeasure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/vLineNose"
+        app:layout_constraintBottom_toTopOf="@+id/vLinePeople"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vLinePeople" />
+        app:layout_constraintTop_toBottomOf="@+id/etPeople" />
 
     <View
         android:id="@+id/vLinePeople"
@@ -131,6 +130,7 @@
         android:id="@+id/ibPeopleBig"
         android:layout_width="@dimen/image_size"
         android:layout_height="@dimen/image_size"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/unchecked"
         android:padding="3dp"
         android:scaleType="fitCenter"
@@ -148,10 +148,9 @@
         android:padding="10dp"
         android:scaleType="fitCenter"
         android:src="@drawable/people_icon"
-        app:layout_constraintBottom_toTopOf="@+id/glPeople"
+        app:layout_constraintBottom_toBottomOf="@+id/ibPeopleBig"
         app:layout_constraintLeft_toRightOf="@+id/glBig"
-        app:layout_constraintRight_toLeftOf="@+id/glMiddle"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toLeftOf="@+id/glMiddle" />
 
     <ImageButton
         android:id="@+id/ibPeopleSmall"
@@ -161,10 +160,9 @@
         android:padding="15dp"
         android:scaleType="fitCenter"
         android:src="@drawable/people_icon"
-        app:layout_constraintBottom_toTopOf="@+id/glPeople"
+        app:layout_constraintBottom_toBottomOf="@+id/ibPeopleBig"
         app:layout_constraintLeft_toRightOf="@+id/glMiddle"
-        app:layout_constraintRight_toLeftOf="@+id/glSmall"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toLeftOf="@+id/glSmall" />
 
 
     <ImageButton
@@ -317,7 +315,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16666666666" />
+        app:layout_constraintGuide_percent="0.20666666666" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glNose"
