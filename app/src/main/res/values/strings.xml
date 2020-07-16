@@ -20,6 +20,7 @@
         <item>Angola|15.73</item>
         <item>Argentina|14.88</item>
         <item>Armenia|13.12</item>
+        <item>Azerbaijan|13.12</item>
         <item>Australia|15.70</item>
         <item>Austria|14.69</item>
         <item>Bahrein|12.93</item>
@@ -59,6 +60,7 @@
         <item>Ethiopia|13.53</item>
         <item>Finland|13.59</item>
         <item>France|14.50</item>
+        <item>Gabon|15.07</item>
         <item>Gambia|15.07</item>
         <item>Georgia|13.87</item>
         <item>Germany|14.48</item>
@@ -66,6 +68,7 @@
         <item>Greece|12.18</item>
         <item>Greenland|13.87</item>
         <item>Guatemala|13.24</item>
+        <item>Guinea|13.12</item>
         <item>Guyana|14.75</item>
         <item>Haiti|15.67</item>
         <item>Hawaii|13.21</item>
@@ -88,16 +91,22 @@
         <item>Kiribati|14.19</item>
         <item>Korea, North|9.60</item>
         <item>Korea, Rep.|10.80</item>
+        <item>Kyrgyzstan|13.12</item>
         <item>Kuwait|11.38</item>
         <item>Laos|10.14</item>
         <item>Latvia|14.69</item>
         <item>Lebanon|16.82</item>
+        <item>Liberia|13.12</item>
         <item>Libya|13.74</item>
+        <item>Liechtenstein|13.12</item>
         <item>Lithuania|14.55</item>
         <item>Luxembourg|13.82</item>
+        <item>Malaysia|13.12</item>
+        <item>Malawi|13.12</item>
         <item>Macedonia, FYR|13.98</item>
         <item>Mexico|14.09</item>
         <item>Moldova|13.76</item>
+        <item>Monaco|13.12</item>
         <item>Mongolia|12.77</item>
         <item>Montenegro|13.56</item>
         <item>Morocco|13.86</item>
@@ -106,6 +115,8 @@
         <item>Netherlands|15.60</item>
         <item>New Caledonia|13.24</item>
         <item>New Zealand|15.79</item>
+        <item>Niger|13.12</item>
+        <item>Nigeria|13.12</item>
         <item>Norway|14.34</item>
         <item>Oman|12.85</item>
         <item>Pakistan|11.40</item>
@@ -117,6 +128,8 @@
         <item>Philippines|10.85</item>
         <item>Poland|15.41</item>
         <item>Portugal|15.14</item>
+        <item>Puerto Rico|13.12</item>
+        <item>Rwanda|13.12</item>
         <item>Qatar|12.41</item>
         <item>Romania|12.73</item>
         <item>Russian Federation|14.16</item>
@@ -130,6 +143,7 @@
         <item>Slovak Republic|14.19</item>
         <item>Slovenia|14.01</item>
         <item>Solomon Islands|13.14</item>
+        <item>Somalia|13.12</item>
         <item>South Africa|15.29</item>
         <item>Spain|13.58</item>
         <item>Sri Lanka|10.18</item>
@@ -138,14 +152,18 @@
         <item>Sweden|15.36</item>
         <item>Switzerland|14.25</item>
         <item>Taiwan|12.50</item>
+        <item>Tajikistan|13.12</item>
         <item>Tanzania|11.50</item>
         <item>Thailand|9.43</item>
+        <item>Togo|13.12</item>
         <item>Tonga|12.94</item>
+        <item>Trinidad and Tobago|13.12</item>
         <item>Tunisia|14.61</item>
         <item>Turkey|13.70</item>
         <item>Turkmenistan|13.48</item>
-        <item>United Arab Emirates|12.54</item>
+        <item>Uganda|13.12</item>
         <item>Ukraine|14.20</item>
+        <item>United Arab Emirates|12.54</item>
         <item>United Kingdom|14.30</item>
         <item>United States|14.15</item>
         <item>Uruguay|14.67</item>
@@ -153,6 +171,8 @@
         <item>Venezuela, RB|16.93</item>
         <item>Vietnam|10.15</item>
         <item>Yemen, Rep.|12.70</item>
+        <item>Zimbabwe|13.12</item>
+        <item>Zambia|13.12</item>
     </array>
 
 </resources>
